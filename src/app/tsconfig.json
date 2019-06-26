@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "esnext",
+        "lib": [
+            "dom",
+            "es2017",
+        ],
+        "sourceMap": true,
+        "allowJs": true,
+        "noEmit": true,
+        "jsx": "preserve",
+        "preserveConstEnums": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "rootDir": "./",
+        "baseUrl": "./",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "strictNullChecks": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": true,
+        "allowSyntheticDefaultImports": true
+    }
+}
