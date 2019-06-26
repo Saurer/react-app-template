@@ -38,11 +38,8 @@ This project contains semantic structure of folders:
 │   │   ├── modules 
 │   │   ├── pages 
 │   │   ├── static 
-│   |   |   └── favicon.ico
 │   │   └── next.config.js 
-│   ├── electron 
-│   ├── head.js
-│   └── nav.js
+│   └── electron
 ├── node_modules
 │   ├── [...]
 ├── package.json
