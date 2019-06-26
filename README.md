@@ -13,6 +13,7 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
   - [yarn export](#yarn-export)
   - [yarn package](#yarn-package)
   - [yarn release](#yarn-release)
+  - [yarn test](#yarn-test)
 - [Adding Components](#adding-components)
 - [Fetching Data](#fetching-data)
 - [Custom Server](#custom-server)
@@ -105,6 +106,10 @@ Packages your application using electron-builder
 ### `yarn release`
 
 Packages your application using electron-builder to installation file. This mode will also sign the binary file if configured
+
+### `yarn test`
+
+Launches jest to perform unit testing of the project
 
 
 ## Adding Components
