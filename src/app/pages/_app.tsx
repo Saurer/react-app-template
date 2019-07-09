@@ -1,5 +1,5 @@
 import { Provider } from 'react-redux';
-import NextApp, { Container, NextAppContext } from 'next/app';
+import NextApp, { Container, AppContext } from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import configureStore from 'modules/store';
 import { Store } from 'redux';
@@ -9,7 +9,7 @@ export interface IAppProps {
 }
 
 class App extends NextApp<IAppProps> {
-    static async getInitialProps({ Component, ctx }: NextAppContext) {
+    static async getInitialProps({ Component, ctx }: AppContext) {
         const pageProps = Component.getInitialProps
             ? await Component.getInitialProps(ctx)
             : {};

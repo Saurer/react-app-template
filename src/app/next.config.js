@@ -1,8 +1,6 @@
-const withTypescript = require('@zeit/next-typescript');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
 
-module.exports = withTypescript({
+module.exports = {
     webpack: (config, options) => {
         config.resolve.modules = [
             __dirname,
@@ -28,10 +26,6 @@ module.exports = withTypescript({
             }
         });
 
-        if (options.isServer) {
-            config.plugins.push(new ForkTsCheckerWebpackPlugin());
-        }
-
         return config;
     }
-});
+};
