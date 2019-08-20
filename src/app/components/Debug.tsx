@@ -1,9 +1,9 @@
-export interface IDebugProps {
+interface Props {
     pending: boolean;
     onClick: () => void;
 }
 
-const Debug: React.FC<IDebugProps> = props => (
+const Debug: React.FC<Props> = props => (
     <div>
         <h4>Debug panel</h4>
         <div>Pending: {String(props.pending)}</div>

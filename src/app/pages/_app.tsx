@@ -4,11 +4,11 @@ import withRedux from 'next-redux-wrapper';
 import configureStore from 'modules/store';
 import { Store } from 'redux';
 
-export interface IAppProps {
+interface Props {
     store: Store;
 }
 
-class App extends NextApp<IAppProps> {
+class App extends NextApp<Props> {
     static async getInitialProps({ Component, ctx }: AppContext) {
         const pageProps = Component.getInitialProps
             ? await Component.getInitialProps(ctx)
