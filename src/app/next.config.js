@@ -1,7 +1,5 @@
-const path = require('path');
-
 module.exports = {
-    webpack: (config, options) => {
+    webpack: config => {
         config.resolve.modules = [
             __dirname,
             ...config.resolve.modules
@@ -12,16 +10,14 @@ module.exports = {
         };
 
         config.module.rules.push({
-            test: /\.ts(x?)$/,
+            test: /\.(ts|js)(x?)$/,
             enforce: 'pre',
             exclude: ['/node_modules/', '/.next/'],
             use: {
-                loader: 'tslint-loader',
+                loader: 'eslint-loader',
                 options: {
-                    emitErrors: true,
-                    failOnHint: true,
-                    typeCheck: true,
-                    tsConfigFile: './src/app/tsconfig.json'
+                    emitWarning: true,
+                    failOnWarning: false
                 }
             }
         });
