@@ -5,22 +5,23 @@ import { createEpicMiddleware } from 'redux-observable';
 import rootReducer, { RootState } from './reducer';
 import rootEpic from './epic';
 
-const composeEnhancers = composeWithDevTools({
+const composeEnhancers = composeWithDevTools({});
 
-});
+const configureStore = (initialState?: RootState) => {
+    const epicMiddleware = createEpicMiddleware<
+        Action<any>,
+        Action<any>,
+        RootState
+    >();
 
-const configureStore = (initialState?: any) => {
-    const epicMiddleware = createEpicMiddleware<Action<any>, Action<any>, RootState>();
     const store = createStore(
         rootReducer,
         initialState,
-        composeEnhancers(
-            applyMiddleware(
-                epicMiddleware
-            )
-        )
+        composeEnhancers(applyMiddleware(epicMiddleware))
     );
+
     epicMiddleware.run(rootEpic);
+
     return store;
 };
 

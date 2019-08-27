@@ -8,7 +8,9 @@ const Debug: React.FC<Props> = props => (
         <h4>Debug panel</h4>
         <div>Pending: {String(props.pending)}</div>
         <div>
-            <button onClick={props.onClick} disabled={props.pending}>testAsync</button>
+            <button onClick={props.onClick} disabled={props.pending}>
+                testAsync
+            </button>
         </div>
     </div>
 );

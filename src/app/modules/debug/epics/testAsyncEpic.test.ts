@@ -10,15 +10,18 @@ test('testAsyncEpic', () => {
         expect(actual.value).toEqual(expected.value);
     });
 
-    testScheduler.run(({ hot, cold, expectObservable }) => {
+    testScheduler.run(({ hot, expectObservable }) => {
         const action$ = hot('-a', {
             a: testAsync.started({})
         });
-        const state$: StateObservable<RootState> = new StateObservable(new Subject(), {
-            debug: {
-                pending: false
+        const state$: StateObservable<RootState> = new StateObservable(
+            new Subject(),
+            {
+                debug: {
+                    pending: false
+                }
             }
-        });
+        );
 
         const output$ = testAsyncEpic(action$, state$, {});
 

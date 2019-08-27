@@ -7,6 +7,9 @@ const mapStateToProps = (state: RootState) => ({
     pending: state.debug.pending
 });
 
-export default connect(mapStateToProps, {
-    onClick: () => testAsync.started({})
-})(Debug);
+export default connect(
+    mapStateToProps,
+    {
+        onClick: () => testAsync.started({})
+    }
+)(Debug);

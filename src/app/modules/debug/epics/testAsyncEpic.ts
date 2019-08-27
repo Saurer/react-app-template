@@ -3,13 +3,16 @@ import ofAction from 'modules/_operators/ofAction';
 import { delay, map } from 'rxjs/operators';
 import { testAsync } from '../actions';
 
-const testAsyncEpic: Epic = action$ => action$.pipe(
-    ofAction(testAsync.started),
-    delay(3000),
-    map(action => testAsync.done({
-        params: action.payload,
-        result: {}
-    }))
-);
+const testAsyncEpic: Epic = action$ =>
+    action$.pipe(
+        ofAction(testAsync.started),
+        delay(3000),
+        map(action =>
+            testAsync.done({
+                params: action.payload,
+                result: {}
+            })
+        )
+    );
 
 export default testAsyncEpic;

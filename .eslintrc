@@ -8,13 +8,11 @@
     "parserOptions": {
         "sourceType": "module"
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
+    "plugins": ["react", "@typescript-eslint", "prettier"],
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:prettier/recommended"
     ],
     "settings": {
         "react": {
@@ -23,10 +21,8 @@
     },
     "rules": {
         "@typescript-eslint/class-name-casing": "warn",
-        "@typescript-eslint/indent": "warn",
         "@typescript-eslint/interface-name-prefix": "warn",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/type-annotation-spacing": "warn",
         "@typescript-eslint/no-unused-vars": "warn",
         "no-unused-vars": "off",
         "curly": "warn",
@@ -36,27 +32,19 @@
         "guard-for-in": "warn",
         "no-bitwise": "warn",
         "no-caller": "warn",
-        "no-console": [
-            "warn"
-        ],
+        "no-console": ["warn"],
         "no-debugger": "warn",
         "no-empty": "warn",
         "no-empty-function": "warn",
         "no-eval": "warn",
         "no-fallthrough": "warn",
-        "no-multiple-empty-lines": [
-            "warn",
-            {
-                "max": 1
-            }
-        ],
         "no-new-wrappers": "warn",
+        "no-undef": "off",
         "radix": "warn",
-        "semi": "warn",
         "no-shadow": [
             "warn",
             {
-                "builtinGlobals": true,
+                "builtinGlobals": false,
                 "hoist": "functions",
                 "allow": []
             }
@@ -71,24 +59,7 @@
                 "html": true
             }
         ],
-        "react/jsx-wrap-multilines": [
-            "warn",
-            {
-                "declaration": "parens-new-line",
-                "assignment": "parens-new-line",
-                "return": "parens-new-line",
-                "arrow": "parens-new-line",
-                "condition": "parens-new-line",
-                "logical": "parens-new-line",
-                "prop": "ignore"
-            }
-        ],
-        "eqeqeq": [
-            "warn",
-            "always"
-        ],
-        "camelcase": [
-            "warn"
-        ]
+        "eqeqeq": ["warn", "always"],
+        "camelcase": ["warn"]
     }
 }

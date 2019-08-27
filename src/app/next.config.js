@@ -1,9 +1,6 @@
 module.exports = {
     webpack: config => {
-        config.resolve.modules = [
-            __dirname,
-            ...config.resolve.modules
-        ];
+        config.resolve.modules = [__dirname, ...config.resolve.modules];
 
         config.node = {
             fs: 'empty'
