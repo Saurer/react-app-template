@@ -1,6 +1,6 @@
 {
     "name": "react-app-template",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "main": "./src/electron/index.js",
     "license": "MIT",
     "author": {
