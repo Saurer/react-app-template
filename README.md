@@ -4,22 +4,22 @@ Find the most recent version of this guide at [here](https://github.com/segmenti
 
 ## Table of Contents
 
-- [Questions? Feedback?](#questions-feedback)
-- [Folder Structure](#folder-structure)
-- [Available Scripts](#available-scripts)
-  - [yarn dev](#yarn-dev)
-  - [yarn build](#yarn-build)
-  - [yarn start](#yarn-start)
-  - [yarn export](#yarn-export)
-  - [yarn package](#yarn-package)
-  - [yarn release](#yarn-release)
-  - [yarn test](#yarn-test)
-- [Adding Components](#adding-components)
-- [Fetching Data](#fetching-data)
-- [Custom Server](#custom-server)
-- [Syntax Highlighting](#syntax-highlighting)
-- [Deploy to Now](#deploy-to-now)
-- [Something Missing?](#something-missing)
+-   [Questions? Feedback?](#questions-feedback)
+-   [Folder Structure](#folder-structure)
+-   [Available Scripts](#available-scripts)
+    -   [yarn dev](#yarn-dev)
+    -   [yarn build](#yarn-build)
+    -   [yarn start](#yarn-start)
+    -   [yarn export](#yarn-export)
+    -   [yarn package](#yarn-package)
+    -   [yarn release](#yarn-release)
+    -   [yarn test](#yarn-test)
+-   [Adding Components](#adding-components)
+-   [Fetching Data](#fetching-data)
+-   [Custom Server](#custom-server)
+-   [Syntax Highlighting](#syntax-highlighting)
+-   [Deploy to Now](#deploy-to-now)
+-   [Something Missing?](#something-missing)
 
 ## Questions? Feedback?
 
@@ -28,17 +28,18 @@ Check out [Next.js FAQ & docs](https://github.com/zeit/next.js#faq) or [let us k
 ## Folder Structure
 
 This project contains semantic structure of folders:
+
 ```
 .
 ├── README.md
 ├── src
 │   ├── app
 │   │   ├── components
-│   │   ├── containers 
-│   │   ├── modules 
-│   │   ├── pages 
-│   │   ├── static 
-│   │   └── next.config.js 
+│   │   ├── containers
+│   │   ├── modules
+│   │   ├── pages
+│   │   ├── static
+│   │   └── next.config.js
 │   └── electron
 ├── node_modules
 │   ├── [...]
@@ -54,10 +55,10 @@ other static resources like images or compiled CSS in there.
 
 Out of the box, we get:
 
-- Automatic transpilation and bundling (with webpack and babel)
-- Hot code reloading
-- Server rendering and indexing of `./src/app/pages`
-- Static file serving. `./src/app/static/` is mapped to `/static/`
+-   Automatic transpilation and bundling (with webpack and babel)
+-   Hot code reloading
+-   Server rendering and indexing of `./src/app/pages`
+-   Static file serving. `./src/app/static/` is mapped to `/static/`
 
 Read more about [Next's Routing](https://github.com/zeit/next.js#routing)
 
@@ -99,7 +100,6 @@ The page will reload if you make edits.
 
 Packages your application using electron-builder
 
-
 ### `yarn release`
 
 Packages your application using electron-builder to installation file. This mode will also sign the binary file if configured
@@ -108,7 +108,6 @@ Packages your application using electron-builder to installation file. This mode
 
 Launches jest to perform unit testing of the project
 
-
 ## Adding Components
 
 We recommend keeping React components in `./src/app/components` and they should look like:
@@ -116,9 +115,7 @@ We recommend keeping React components in `./src/app/components` and they should 
 ### `./src/app/components/Simple.js`
 
 ```tsx
-const Simple: React.SFC = () => (
-    <div>Simple Component</div>
-)
+const Simple: React.SFC = () => <div>Simple Component</div>;
 
 export default Simple; // don't forget to export default!
 ```
@@ -134,9 +131,7 @@ class Complex extends Component<{}, { text: string }> {
     };
 
     render() {
-        return (
-            <div>Hello {this.state.text}</div>
-        );
+        return <div>Hello {this.state.text}</div>;
     }
 }
 
@@ -151,7 +146,7 @@ You can fetch data in `pages` components using `getInitialProps` like this:
 
 ```tsx
 const Page: React.FC<{ stars: any }> = props => (
-   <div>Next stars: {props.stars}</div>
+    <div>Next stars: {props.stars}</div>
 );
 
 Page.getInitialProps = async ({ req }) => {
@@ -159,7 +154,7 @@ Page.getInitialProps = async ({ req }) => {
     const json = await res.json();
     const stars = json.stargazers_count;
     return { stars };
-}
+};
 
 export default Page;
 ```
@@ -196,11 +191,9 @@ app.prepare().then(() => {
 
         if (pathname === '/a') {
             app.render(req, res, '/b', query);
-        }
-        else if (pathname === '/b') {
+        } else if (pathname === '/b') {
             app.render(req, res, '/a', query);
-        }
-        else {
+        } else {
             handle(req, res, parsedUrl);
         }
     }).listen(3000, err => {

@@ -4,7 +4,7 @@ import testAsyncHandler from './reducers/testAsyncHandler';
 import testAsyncDoneHandler from './reducers/testAsyncDoneHandler';
 
 export type State = {
-    pending: boolean
+    pending: boolean;
 };
 
 const initialState: State = {
