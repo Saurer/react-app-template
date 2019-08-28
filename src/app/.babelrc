@@ -1,10 +1,18 @@
 {
     "env": {
         "development": {
-            "presets": ["next/babel"]
+            "presets": [
+                "next/babel",
+                [
+                    "@emotion/babel-preset-css-prop",
+                    {
+                        "sourceMap": true
+                    }
+                ]
+            ]
         },
         "production": {
-            "presets": ["next/babel"]
+            "presets": ["next/babel", "@emotion/babel-preset-css-prop"]
         },
         "test": {
             "presets": [
@@ -15,7 +23,8 @@
                             "modules": "commonjs"
                         }
                     }
-                ]
+                ],
+                "@emotion/babel-preset-css-prop"
             ]
         }
     }
