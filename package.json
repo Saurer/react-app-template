@@ -40,7 +40,6 @@
         "@emotion/core": "^10.0.16",
         "@types/jest": "^24.0.15",
         "@types/react": "^16.8.22",
-        "@types/react-redux": "^7.1.0",
         "@typescript-eslint/eslint-plugin": "^2.0.0",
         "@typescript-eslint/parser": "^2.0.0",
         "electron": "^5.0.5",
@@ -54,19 +53,14 @@
         "eslint-plugin-react": "^7.14.3",
         "eslint-plugin-react-hooks": "^2.0.1",
         "jest": "^24.8.0",
+        "mobx": "^5.13.0",
+        "mobx-react-lite": "^1.4.1",
+        "mobx-state-tree": "^3.14.1",
         "next": "^9.0.0",
-        "next-redux-wrapper": "^3.0.0-alpha.3",
         "prettier": "^1.18.2",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "react-redux": "^7.1.0",
-        "redux": "^4.0.1",
-        "redux-devtools-extension": "^2.13.8",
-        "redux-observable": "^1.1.0",
-        "rxjs": "^6.5.2",
         "ts-jest": "^24.0.2",
-        "typescript": "^3.5.2",
-        "typescript-fsa": "^3.0.0-beta-2",
-        "typescript-fsa-reducers": "^1.2.1"
+        "typescript": "^3.5.2"
     }
 }
