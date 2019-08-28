@@ -1,9 +1,7 @@
+import { useContext } from 'react';
 import { css } from '@emotion/core';
-
-interface Props {
-    pending: boolean;
-    onClick: () => void;
-}
+import { useObserver } from 'mobx-react-lite';
+import StoreContext from './StoreContext';
 
 const buttonStyle = css`
     background: #0072ff;
@@ -28,20 +26,24 @@ const buttonStyle = css`
     }
 `;
 
-const Debug: React.FC<Props> = props => (
-    <div>
-        <h4>Debug panel</h4>
-        <div>Pending: {String(props.pending)}</div>
+const Debug: React.FC = () => {
+    const storeContext = useContext(StoreContext);
+
+    return useObserver(() => (
         <div>
-            <button
-                css={buttonStyle}
-                onClick={props.onClick}
-                disabled={props.pending}
-            >
-                testAsync
-            </button>
+            <h4>Debug panel</h4>
+            <div>Pending: {String(storeContext.debug.pending)}</div>
+            <div>
+                <button
+                    css={buttonStyle}
+                    onClick={storeContext.debug.testAsync}
+                    disabled={storeContext.debug.pending}
+                >
+                    testAsync
+                </button>
+            </div>
         </div>
-    </div>
-);
+    ));
+};
 
 export default Debug;

@@ -1,5 +1,5 @@
 import Layout from 'components/Layout';
-import Debug from 'containers/debug';
+import Debug from 'components/Debug';
 
 const Index: React.FC = () => (
     <Layout>
