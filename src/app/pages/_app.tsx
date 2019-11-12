@@ -1,4 +1,4 @@
-import NextApp, { Container, AppContext } from 'next/app';
+import NextApp, { AppContext } from 'next/app';
 import StoreContext from 'components/StoreContext';
 import store from 'stores';
 
@@ -16,11 +16,9 @@ class App extends NextApp {
     render() {
         const { Component, pageProps } = this.props;
         return (
-            <Container>
-                <StoreContext.Provider value={store}>
-                    <Component {...pageProps} />
-                </StoreContext.Provider>
-            </Container>
+            <StoreContext.Provider value={store}>
+                <Component {...pageProps} />
+            </StoreContext.Provider>
         );
     }
 }
