@@ -38,7 +38,7 @@ This project contains semantic structure of folders:
 │   │   ├── containers
 │   │   ├── modules
 │   │   ├── pages
-│   │   ├── static
+│   │   ├── public 
 │   │   └── next.config.js
 │   └── electron
 ├── node_modules
@@ -50,7 +50,7 @@ This project contains semantic structure of folders:
 Routing in Next.js is based on the file system, so `./src/app/pages/index.js` maps to the `/` route and
 `./src/app/pages/about.js` would map to `/about`.
 
-The `./src/app/static` directory maps to `/static` in the `next` server, so you can put all your
+The `./src/app/public` directory maps to `/` in the `next` server, so you can put all your
 other static resources like images or compiled CSS in there.
 
 Out of the box, we get:
@@ -58,7 +58,7 @@ Out of the box, we get:
 -   Automatic transpilation and bundling (with webpack and babel)
 -   Hot code reloading
 -   Server rendering and indexing of `./src/app/pages`
--   Static file serving. `./src/app/static/` is mapped to `/static/`
+-   Static file serving. `./src/app/public/` is mapped to `/`
 
 Read more about [Next's Routing](https://github.com/zeit/next.js#routing)
 
